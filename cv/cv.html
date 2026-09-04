@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jovany Raafat Wahba — Systems &amp; Software Engineer</title>
+    <style>
+      /* A4 CV. Build with: npm run cv  (see cv/build-cv.mjs) */
+      @page {
+        size: A4;
+        margin: 12mm 13mm;
+      }
+
+      :root {
+        --ink: #14181f;
+        --body: #33393f;
+        --soft: #5d646d;
+        --accent: #5b3fd4;
+        --rule: #d8dbe0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 9.4pt;
+        line-height: 1.42;
+        color: var(--body);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      /* ---------- header ---------- */
+      header {
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 7px;
+        margin-bottom: 11px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 20.5pt;
+        letter-spacing: 0.6px;
+        color: var(--ink);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .role {
+        margin: 2px 0 6px;
+        font-size: 11pt;
+        font-weight: 600;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .contact {
+        font-size: 8.7pt;
+        color: var(--soft);
+      }
+
+      .contact span:not(:last-child)::after {
+        content: "  ·  ";
+        color: var(--rule);
+      }
+
+      /* ---------- sections ---------- */
+      section {
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        margin: 0 0 6px;
+        font-size: 9.2pt;
+        font-weight: 700;
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
+        color: var(--ink);
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 3px;
+      }
+
+      p {
+        margin: 0 0 5px;
+      }
+
+      /* ---------- entries ---------- */
+      .entry {
+        margin-bottom: 7px;
+        break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .entry-title {
+        font-weight: 700;
+        color: var(--ink);
+        font-size: 9.8pt;
+      }
+
+      .entry-meta {
+        color: var(--soft);
+        font-size: 8.6pt;
+        white-space: nowrap;
+      }
+
+      .entry-sub {
+        color: var(--soft);
+        font-size: 8.8pt;
+        font-style: italic;
+        margin-bottom: 1px;
+      }
+
+      ul {
+        margin: 2px 0 0;
+        padding-left: 14px;
+      }
+
+      li {
+        margin-bottom: 1.5px;
+      }
+
+      .stack {
+        margin-top: 2.5px;
+        font-size: 8.5pt;
+        color: var(--soft);
+      }
+
+      .stack b {
+        color: var(--body);
+        font-weight: 600;
+      }
+
+      /* ---------- skills ---------- */
+      .skills div {
+        margin-bottom: 3px;
+      }
+
+      .skills b {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+      }
+
+      .muted {
+        color: var(--soft);
+        font-size: 8.6pt;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Jovany Raafat Wahba</h1>
+      <div class="role">Systems &amp; Software Engineer</div>
+      <div class="contact">
+        <span>Cairo, Egypt</span>
+        <span>+20 100 822 5833</span>
+        <span><a href="mailto:jovywahba@gmail.com">jovywahba@gmail.com</a></span>
+        <span
+          ><a href="https://www.linkedin.com/in/jovany-wahba-0417431b6/"
+            >linkedin.com/in/jovany-wahba</a
+          ></span
+        >
+        <span><a href="https://github.com/jovywahba">github.com/jovywahba</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Systems &amp; Software Engineer with a B.Sc. in Computer Science from Nile
+        University and specialised training from the ITI Frontend &amp; Mobile
+        Platform track. I build and operate complete software systems rather than
+        interfaces alone — application front ends, REST APIs and server-side
+        business logic, relational data models, authentication and user roles,
+        third-party integrations, and production deployment on real domains.
+        Recent work spans an internal production booking and operations
+        platform, its public customer-facing counterpart, bilingual clinic
+        management software and two SaaS products, all live in production, built
+        with Next.js, React, Node-based server logic and PostgreSQL via Supabase,
+        and shipped on Vercel and Cloudflare.
+      </p>
+    </section>
+
+    <section>
+      <h2>Selected Engineering Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"
+            >TPP Studios — Internal Production Booking &amp; Operations
+            Platform</span
+          >
+          <span class="entry-meta">studios.tpp.network</span>
+        </div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
+        <ul>
+          <li>
+            Engineered a full-stack studio booking and operations platform
+            replacing a manual process: a multi-step flow that assembles a
+            booking dynamically from date and time, guests, studio, equipment and
+            crew, services and delivery requirements, priced by a configurable
+            rules engine covering duration, preparation time, overtime rounding
+            and deposit percentages.
+          </li>
+          <li>
+            Built the backend and data layer on Supabase and PostgreSQL, making
+            studios, equipment, extras, talent rooms, post-production packages
+            and pricing configurable as data rather than code, with role-based
+            administration over users, resources, promo codes, booking
+            configuration and booking lifecycle states.
+          </li>
+          <li>
+            Integrated the supporting workflows — Google Calendar for scheduling
+            and availability, transactional email for booking and operational
+            notifications, authentication with role-aware permissions, and
+            deployment on Vercel.
+          </li>
+        </ul>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · Node.js · REST API · Supabase ·
+          PostgreSQL · Auth &amp; RBAC · Google Calendar API · Resend · Paymob ·
+          Vercel
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"
+            >The Studio — Public Studio Booking Platform</span
+          >
+          <span class="entry-meta">the-studio.me</span>
+        </div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
+        <ul>
+          <li>
+            Built the public-facing side of the same booking platform, letting
+            external clients configure a studio session — time, studio,
+            equipment, crew, services and file-delivery options — through a
+            dynamic booking journey with an itemised, rule-based price.
+          </li>
+          <li>
+            Implemented the customer-facing commercial logic: duration-tier
+            pricing and discounts, conditional security deposits for
+            bring-your-own equipment or crew, VAT-inclusive totals and
+            server-validated promo codes, with catalogue and pricing kept
+            centrally configurable.
+          </li>
+          <li>
+            Integrated authentication with identity-based routing that separates
+            staff and customer experiences across hosts, customer booking
+            management, calendar-backed availability, transactional email and
+            Paymob checkout — preserving a customer's in-progress booking across
+            sign-in.
+          </li>
+        </ul>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · Node.js · REST API · Supabase ·
+          PostgreSQL · Supabase Auth · Google Calendar API · Resend · Paymob ·
+          Vercel
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">TPP Group — Corporate Media Platform</span>
+          <span class="entry-meta">tppgroup.co</span>
+        </div>
+        <div class="entry-sub">Full-Stack Development</div>
+        <ul>
+          <li>
+            Built the corporate platform for a media intelligence group operating
+            four business lines and 40+ Arabic content brands: a multi-section
+            routed application covering the group, its platforms, brand portfolio,
+            partners and editorial content.
+          </li>
+          <li>
+            Implemented newsletter capture and contact flows backed by a hosted
+            database, served through Cloudflare.
+          </li>
+        </ul>
+        <div class="stack">
+          <b>Stack:</b> React · Vite · Supabase · Cloudflare
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">TPP Intelligence — Audience Analytics Platform</span>
+          <span class="entry-meta">tppintelligence.io</span>
+        </div>
+        <div class="entry-sub">Full-Stack Development</div>
+        <ul>
+          <li>
+            Built the product platform for an Arabic audience-intelligence tool,
+            fully bilingual across English and a dedicated Arabic locale with RTL
+            layout, including the interactive analytics presentation layer for
+            engagement, content volume and sentiment.
+          </li>
+          <li>
+            Implemented the demo-request conversion flow and instrumented the site
+            with Google Tag Manager and GA4.
+          </li>
+        </ul>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · Google Tag Manager · GA4 · Vercel
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">ClinicPro — Clinic Management SaaS</span>
+          <span class="entry-meta">clinicpro.me</span>
+        </div>
+        <div class="entry-sub">Full-Stack Development</div>
+        <ul>
+          <li>
+            Built a bilingual Arabic/English clinic management product with full
+            RTL layout and Arabic numerals: appointments, a live patient queue
+            with automatic ticket numbers, patient records and prescriptions,
+            clinic-branded receipts and income tracking.
+          </li>
+          <li>
+            Modelled scheduling rules in the database — per-day hours, special
+            dates and blocked breaks — so out-of-hours bookings cannot be created
+            regardless of client.
+          </li>
+          <li>
+            Implemented role-based access for doctors and reception staff,
+            internal team messaging, Excel data export, an activity log, and plan
+            gating across a free tier and monthly, annual and lifetime
+            subscriptions.
+          </li>
+        </ul>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · Supabase · PostgreSQL · PostgREST ·
+          PostHog · Vercel
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">The Vow — Wedding Invitation Platform</span>
+          <span class="entry-meta">thevow.life</span>
+        </div>
+        <div class="entry-sub">Full-Stack Development</div>
+        <ul>
+          <li>
+            Built a digital invitation product around per-guest tracking: each
+            guest receives a unique tokenised link and replies without creating an
+            account, while the host follows attendance from a live RSVP dashboard.
+          </li>
+          <li>
+            Implemented plus-one and family responses, invitation open tracking
+            for targeted follow-up, one-tap WhatsApp sharing, and a template
+            engine combining 28 designs with 14 colour themes and 8 font pairings.
+          </li>
+        </ul>
+        <div class="stack"><b>Stack:</b> Next.js · React · Vercel</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">The QR Gate — QR Code SaaS</span>
+          <span class="entry-meta">theqrgate.com</span>
+        </div>
+        <div class="entry-sub">Full-Stack Development</div>
+        <ul>
+          <li>
+            Built a freemium QR platform supporting 16 code types — URLs, PDFs,
+            vCards, WiFi credentials, menus, coupons and social profiles —
+            through a four-step generator with PNG and SVG export.
+          </li>
+          <li>
+            Implemented dynamic hosted codes that resolve through generated
+            mobile landing pages, so a printed code's destination stays editable,
+            with plan gating and scan analytics on the paid tier.
+          </li>
+        </ul>
+        <div class="stack"><b>Stack:</b> Next.js · React · Vercel</div>
+      </div>
+</section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Cred Development — IT Department Intern</span>
+          <span class="entry-meta">Cairo · Dec 2024 – Jan 2025</span>
+        </div>
+        <ul>
+          <li>
+            Maintained accurate digital records across users, emails, purchases
+            and bills, and supported data consistency across internal systems.
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">General Petroleum Company — Intern</span>
+          <span class="entry-meta">Cairo · Aug 2023 – Sep 2023</span>
+        </div>
+        <ul>
+          <li>
+            Observed cross-department operations and IT systems integration,
+            gaining exposure to data handling in large infrastructures.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div>
+          <b>Languages &amp; Frameworks:</b> JavaScript, TypeScript, Next.js,
+          React, Node.js, Express, React Native, Flutter, Dart, HTML5, CSS3,
+          Tailwind CSS, Vite, Bootstrap
+        </div>
+        <div>
+          <b>Backend &amp; APIs:</b> REST API design, Next.js route handlers,
+          server-side business logic, pricing and booking rules engines,
+          authentication and authorisation, role-based access control
+        </div>
+        <div>
+          <b>Databases &amp; Data:</b> PostgreSQL, Supabase, PostgREST, Firebase,
+          MongoDB, relational schema design, database-enforced constraints, data
+          export and reporting
+        </div>
+        <div>
+          <b>Infrastructure &amp; Deployment:</b> Vercel, Cloudflare, domain and
+          DNS configuration, custom-domain routing, environment configuration,
+          Git and GitHub
+        </div>
+        <div>
+          <b>Integrations:</b> Google Calendar API, transactional email (Resend),
+          payment gateway integration (Paymob), WhatsApp Business links, Google
+          Maps, third-party REST APIs
+        </div>
+        <div>
+          <b>Product &amp; Analytics:</b> multi-tenant / white-label
+          configuration, subscription and plan gating, admin dashboards and
+          internal tooling, audit logging, PostHog, Google Analytics 4, Google Tag
+          Manager
+        </div>
+        <div>
+          <b>Practices:</b> Arabic/English bilingual and RTL interfaces,
+          responsive UI, AI-assisted development, debugging and profiling,
+          technical documentation
+        </div>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section>
+        <h2>Education</h2>
+        <div class="entry">
+          <div class="entry-title">B.Sc. in Computer Science</div>
+          <div class="entry-sub">Nile University — Giza, Egypt</div>
+          <!-- TODO Jovany: add the study dates, e.g.
+               <div class="muted">Sep 2021 – Jul 2025</div>
+               They could not be recovered from the old PDF's subset fonts. -->
+          <div class="muted">Grade: Good</div>
+          <div class="muted">
+            Graduation project: Recipe Recommendation System (mobile app)
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Training &amp; Certification</h2>
+        <div class="entry">
+          <div class="entry-title">
+            Information Technology Institute (ITI)
+          </div>
+          <div class="entry-sub">Frontend &amp; Mobile Platform Track</div>
+          <div class="muted">
+            <!-- TODO Jovany: add the ITI year/duration. -->
+            Intensive course: JavaScript, React, React Native, Flutter, Firebase,
+            testing, UX for mobile, networking fundamentals.
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-title">IBM SkillsBuild</div>
+          <div class="entry-sub">Web Development Fundamentals</div>
+          <!-- TODO Jovany: add the issue date (the old PDF showed "Issued Oct 20__"). -->
+          <div class="muted">Credential available on request.</div>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <h2>Earlier Projects</h2>
+      <p class="muted">
+        University, ITI and team projects — Enjez services booking platform (web
+        and React Native mobile), React e-learning SPA, e-commerce web and mobile
+        apps, movie app, and a Node/Express social app. Full write-ups at
+        github.com/jovywahba.
+      </p>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p class="muted">Arabic · English</p>
+    </section>
+  </body>
+</html>

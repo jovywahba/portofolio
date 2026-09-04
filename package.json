@@ -1,13 +1,15 @@
 {
-  "name": "beautiful-portfolio",
+  "name": "jovany-wahba-portfolio",
+  "description": "Portfolio of Jovany Raafat Wahba \u2014 Systems & Software Engineer.",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cv": "node cv/build-cv.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -30,6 +32,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "puppeteer-core": "^23.11.1",
     "vite": "^5.3.4"
   }
 }

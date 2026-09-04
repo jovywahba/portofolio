@@ -1,96 +1,37 @@
-import { useState } from "react";
-import { cn } from "@/lib/utils";
-
-const skills = [
-  // Frontend
-  { name: "HTML", level: 90, category: "frontend" },
-  { name: "HTML5", level: 90, category: "frontend" },
-  { name: "CSS", level: 85, category: "frontend" },
-  { name: "CSS3", level: 85, category: "frontend" },
-  { name: "JavaScript", level: 70, category: "frontend" },
-  { name: "TypeScript", level: 70, category: "frontend" },
-  { name: "React", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 70, category: "frontend" },
-  { name: "Next.js", level: 70, category: "frontend" },
-  { name: "jQuery", level: 70, category: "frontend" },
-  { name: "Bootstrap", level: 80, category: "frontend" },
-  { name: "Angular", level: 70, category: "frontend" },
-  { name: "Responsive Design", level: 90, category: "frontend" },
-
-  // Mobile
-  { name: "React Native", level: 85, category: "mobile" },
-  { name: "Flutter", level: 80, category: "mobile" },
-  { name: "Dart", level: 80, category: "mobile" },
-
-  // Backend / Services
-  { name: "Node.js", level: 60, category: "backend" },
-  { name: "REST APIs", level: 70, category: "backend" },
-  { name: "Firebase", level: 90, category: "backend" },
-  { name: "Supabase", level: 90, category: "backend" },
-
-  // Tools
-  { name: "Git / GitHub", level: 80, category: "tools" },
-  { name: "Figma", level: 70, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
-];
-
-const categories = ["all", "frontend", "mobile", "backend", "tools"];
+import { skillGroups } from "@/data/skills";
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
-
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          Technical <span className="text-primary">Skills</span>
         </h2>
 
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Grouped by what I actually do on a system, and limited to what the
+          projects above genuinely demonstrate.
+        </p>
 
-        {/* Skills cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillGroups.map((group) => (
             <div
-              key={skill.name}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              key={group.id}
+              className="bg-card p-6 rounded-lg border border-border/60 card-hover text-left flex flex-col"
             >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-              </div>
+              <h3 className="font-semibold text-lg">{group.title}</h3>
 
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {group.description}
+              </p>
 
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <li key={skill} className="tag-chip">
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

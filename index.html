@@ -2,9 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta name="theme-color" content="#0a0e17" />
+
+    <title>Jovany Wahba — Systems &amp; Software Engineer</title>
+    <meta
+      name="description"
+      content="Jovany Raafat Wahba — Systems &amp; Software Engineer in Cairo. I build and run full-stack production systems: booking platforms, clinic software and SaaS products, with the APIs, databases, integrations and infrastructure behind them."
+    />
+    <meta name="author" content="Jovany Raafat Wahba" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!--
+      TODO once deployed: replace REPLACE_WITH_LIVE_URL below with the real
+      origin (e.g. https://jovanywahba.vercel.app) in the three places marked,
+      and uncomment the canonical link. Open Graph requires absolute URLs, so
+      these tags do nothing useful until the domain is known.
+
+      <link rel="canonical" href="REPLACE_WITH_LIVE_URL/" />
+      <meta property="og:url" content="REPLACE_WITH_LIVE_URL/" />
+      <meta property="og:image" content="REPLACE_WITH_LIVE_URL/og-image.png" />
+      <meta name="twitter:image" content="REPLACE_WITH_LIVE_URL/og-image.png" />
+    -->
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jovany Wahba" />
+    <meta
+      property="og:title"
+      content="Jovany Wahba — Systems &amp; Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack production systems: booking platforms, clinic software and SaaS products — application, API, database, integrations and deployment."
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jovany Wahba — Systems &amp; Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-stack production systems: booking platforms, clinic software and SaaS products — application, API, database, integrations and deployment."
+    />
+    <!--
+      Apply the stored theme before first paint. This runs on every route
+      (including 404) and prevents a flash of the wrong theme; ThemeToggle only
+      flips it afterwards.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          if (!stored) {
+            stored = "dark";
+            localStorage.setItem("theme", stored);
+          }
+          document.documentElement.classList.toggle("dark", stored === "dark");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
