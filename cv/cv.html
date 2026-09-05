@@ -429,20 +429,28 @@
           <span class="entry-title">The QR Gate — QR Code SaaS</span>
           <span class="entry-meta">theqrgate.com</span>
         </div>
-        <div class="entry-sub">Full-Stack Development</div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
         <ul>
           <li>
-            Built a freemium QR platform supporting 16 code types — URLs, PDFs,
-            vCards, WiFi credentials, menus, coupons and social profiles —
-            through a four-step generator with PNG and SVG export.
+            Built a freemium QR-code SaaS supporting 16 QR types across static
+            codes (payload encoded directly) and dynamic codes that resolve
+            through a managed short link — so a printed code's destination can be
+            changed after printing while the QR image stays the same, with the
+            redirect locked to a stored, pre-validated URL and scan analytics
+            recorded off the redirect path.
           </li>
           <li>
-            Implemented dynamic hosted codes that resolve through generated
-            mobile landing pages, so a printed code's destination stays editable,
-            with plan gating and scan analytics on the paid tier.
+            Engineered the platform around it: a registry-driven QR engine with
+            PNG/SVG export, editable hosted mobile landing pages, per-owner
+            row-level security, version history and scan analytics, Stripe
+            subscription gating with a signature-verified webhook, storage
+            uploads, and a platform admin tier.
           </li>
         </ul>
-        <div class="stack"><b>Stack:</b> Next.js · React · Vercel</div>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · TypeScript · Supabase · PostgreSQL ·
+          RLS · Stripe · qr-code-styling · Vercel
+        </div>
       </div>
 </section>
 
