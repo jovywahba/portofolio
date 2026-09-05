@@ -289,24 +289,31 @@
 
       <div class="entry">
         <div class="entry-head">
-          <span class="entry-title">TPP Group — Corporate Media Platform</span>
+          <span class="entry-title"
+            >TPP Group — Corporate Media Platform</span
+          >
           <span class="entry-meta">tppgroup.co</span>
         </div>
-        <div class="entry-sub">Full-Stack Development</div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
         <ul>
           <li>
-            Built the corporate platform for a media intelligence group operating
-            four business lines and 40+ Arabic content brands: a multi-section
-            routed application covering the group, its platforms, brand portfolio,
-            partners and editorial content.
+            Built the production corporate platform for a media group, presenting
+            its business units, brand portfolio, leadership and editorial content
+            as one routed React application on a reusable component and layout
+            system shared across corporate, brand and editorial sections.
           </li>
           <li>
-            Implemented newsletter capture and contact flows backed by a hosted
-            database, served through Cloudflare.
+            Implemented the Supabase data layer: editorial posts served from
+            PostgreSQL and filtered by type and publication status, newsletter
+            signup routed through a database function rather than a client-side
+            table write, a confirmation email sent from an Edge Function, and an
+            authenticated admin area — behind a route guard and an allowlist
+            check — for publishing and sending newsletters.
           </li>
         </ul>
         <div class="stack">
-          <b>Stack:</b> React · Vite · Supabase · Cloudflare
+          <b>Stack:</b> React · Vite · Supabase · PostgreSQL · PostgREST ·
+          Supabase Edge Functions · Supabase Auth · Cloudflare
         </div>
       </div>
 
