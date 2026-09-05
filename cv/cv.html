@@ -371,29 +371,28 @@
           <span class="entry-title">ClinicPro — Clinic Management SaaS</span>
           <span class="entry-meta">clinicpro.me</span>
         </div>
-        <div class="entry-sub">Full-Stack Development</div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
         <ul>
           <li>
-            Built a bilingual Arabic/English clinic management product with full
-            RTL layout and Arabic numerals: appointments, a live patient queue
-            with automatic ticket numbers, patient records and prescriptions,
-            clinic-branded receipts and income tracking.
+            Built a bilingual (Arabic/English, RTL) multi-tenant
+            clinic-management SaaS covering appointments, the daily patient
+            queue, medical records, prescriptions and investigation orders,
+            clinic-branded printable documents and income tracking — with each
+            clinic's data isolated by PostgreSQL row-level security rather than
+            application-layer filtering.
           </li>
           <li>
-            Modelled scheduling rules in the database — per-day hours, special
-            dates and blocked breaks — so out-of-hours bookings cannot be created
-            regardless of client.
-          </li>
-          <li>
-            Implemented role-based access for doctors and reception staff,
-            internal team messaging, Excel data export, an activity log, and plan
-            gating across a free tier and monthly, annual and lifetime
-            subscriptions.
+            Engineered the platform layer: middleware route protection backed by
+            client role guards, a super-admin tier for managing clinics and
+            users, subscription plan gating with Paymob payment-intention
+            creation and HMAC-verified webhooks, realtime team chat, spreadsheet
+            export, and 19 sequenced migrations including three
+            production-hardening passes.
           </li>
         </ul>
         <div class="stack">
-          <b>Stack:</b> Next.js · React · Supabase · PostgreSQL · PostgREST ·
-          PostHog · Vercel
+          <b>Stack:</b> Next.js · React · TypeScript · Supabase · PostgreSQL ·
+          RLS · Supabase Auth/Storage/Realtime · Paymob · PostHog · Vercel
         </div>
       </div>
 
