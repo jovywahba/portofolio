@@ -398,23 +398,30 @@
 
       <div class="entry">
         <div class="entry-head">
-          <span class="entry-title">The Vow — Wedding Invitation Platform</span>
+          <span class="entry-title">The Vow — Digital Invitation Platform</span>
           <span class="entry-meta">thevow.life</span>
         </div>
-        <div class="entry-sub">Full-Stack Development</div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
         <ul>
           <li>
-            Built a digital invitation product around per-guest tracking: each
-            guest receives a unique tokenised link and replies without creating an
-            account, while the host follows attendance from a live RSVP dashboard.
+            Built a digital invitation and guest-management platform on a
+            host → event → guest model, where each guest receives a private
+            tokenised link that renders one invitation personalised to them and
+            captures their RSVP without an account — resolved server-side through
+            token-keyed database functions, with row-level security separating
+            public invitation reads from host-only data.
           </li>
           <li>
-            Implemented plus-one and family responses, invitation open tracking
-            for targeted follow-up, one-tap WhatsApp sharing, and a template
-            engine combining 28 designs with 14 colour themes and 8 font pairings.
+            Engineered a single rendering engine driving 28 invitation templates
+            with data-driven colour themes and font pairings, plus the host
+            dashboard, RSVP and open-tracking, Supabase Auth and Storage,
+            transactional email via Resend, and a platform admin tier.
           </li>
         </ul>
-        <div class="stack"><b>Stack:</b> Next.js · React · Vercel</div>
+        <div class="stack">
+          <b>Stack:</b> Next.js · React · TypeScript · Supabase · PostgreSQL ·
+          RLS · Supabase Auth/Storage · Resend · Vercel
+        </div>
       </div>
 
       <div class="entry">
