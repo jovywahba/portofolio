@@ -31,14 +31,23 @@
  *   1 TPP Studios · 2 The Studio · 3 TPP Group · 4 TPP Intelligence
  *   5 ClinicPro   · 6 The Vow    · 7 The QR Gate
  *
- * VERIFICATION
- * `stack` lists only technologies observed directly from the live sites:
- * response headers, build output (/_next/*, Vite asset chunks), network
- * requests, and identifiers present in the shipped client bundles. Anything
- * not yet confirmed is tracked in `unverified` and deliberately kept out of
- * `stack` until Jovany confirms it. Fields left as empty strings or arrays are
- * placeholders to be filled in as each case study is written — they are not
- * claims.
+ * VERIFICATION & PROVENANCE
+ * Nothing reaches `stack` or the public copy unless it is established one of
+ * two ways. `provenance` records which, per project — it is internal bookkeeping
+ * and is never rendered:
+ *
+ *   sourceVerified   read from the application's own source repository
+ *   ownerConfirmed   stated by Jovany about his own work
+ *   observed         seen directly in the live product: response headers, build
+ *                    output, network requests, or identifiers in the shipped
+ *                    client bundle
+ *   unverified       plausible but unestablished — excluded from `stack` and
+ *                    from all public copy until confirmed
+ *
+ * `observed` and stronger may be published. `unverified` may not.
+ *
+ * Fields left as empty strings or arrays are placeholders for case studies not
+ * yet written — they are not claims.
  */
 
 export const PROJECT_TYPES = {
@@ -115,12 +124,33 @@ export const projects = [
     ],
     featured: true,
     order: 1,
-    unverified: [
-      "Exact public step labels differ from the internal flow — the live public wizard shows 6 labelled steps (Date and time, Equipment, Setup, Talent room, Additional services, Guest invitations) with the guest count nested inside step 1",
-      "Whether Paymob is live for internal bookings or only the external path",
-      "InstaPay — an `instapay_account` field exists in platform settings, but Jovany has not confirmed it, so it is not claimed anywhere",
-      "Whether row-level security is used alongside application-level RBAC",
-    ],
+    provenance: {
+      sourceVerified: [],
+      ownerConfirmed: [
+        "Internal/staff audience and internal approval workflow",
+        "Booking step list and SSD/file-delivery requirement",
+        "Configurable pricing rules incl. prep time, overtime, deposit pct",
+        "Admin scope: users, studios, equipment, extras, talent rooms, services, pricing, promo codes, booking config and status",
+        "Role set behind the platform",
+        "Resend as the email provider",
+        "Paymob as the payment provider",
+      ],
+      observed: [
+        "Next.js on Vercel",
+        "Supabase + PostgreSQL behind a REST catalogue endpoint",
+        "Relational entities incl. pricing_rules, talent_rooms, post_production_packages",
+        "Supabase Auth with email/password and Google sign-in",
+        "/admin and /dashboard are route-guarded and redirect to /login",
+        "gcal_calendar_id stored per studio",
+        "ssd_fee and external_team_deposit_pct in pricing rules",
+      ],
+      unverified: [
+        "Exact public step labels differ from the internal flow — the live public wizard shows 6 labelled steps (Date and time, Equipment, Setup, Talent room, Additional services, Guest invitations) with the guest count nested inside step 1",
+        "Whether Paymob is live for internal bookings or only the external path",
+        "InstaPay — an `instapay_account` field exists in platform settings, but Jovany has not confirmed it, so it is not claimed anywhere",
+        "Whether row-level security is used alongside application-level RBAC",
+      ],
+    },
   },
   {
     slug: "the-studio",
@@ -191,12 +221,33 @@ export const projects = [
     ],
     featured: true,
     order: 2,
-    unverified: [
-      "Whether Paymob is activated for live transactions — the checkout UI and payment_method capture are in the shipped client, but payment initiation is server-side and cannot be confirmed externally",
-      "Whether the Google Calendar integration reads free/busy state or only writes events — availability is resolved by a server endpoint whose source is not observable",
-      "Whether Supabase row-level security backs the API-layer authorisation",
-      "Whether the first-time-user welcome email still exists in the current implementation",
-    ],
+    provenance: {
+      sourceVerified: [],
+      ownerConfirmed: [
+        "External/customer audience and its distinct commercial rules",
+        "Resend as the email provider",
+        "Paymob as the payment provider",
+        "Google Calendar used in scheduling",
+      ],
+      observed: [
+        "Next.js on Vercel; same deployment as the internal host",
+        "Identity-derived staff/external domain typing and cross-host auth handoff",
+        "Supabase Auth: signInWithPassword, Google OAuth, signUp, email verification",
+        "Client-side quote engine over pricing_rules; server-authoritative totals via promo validation",
+        "Half-day/full-day tiers with configurable discount percentages",
+        "Conditional security deposit from external_team_deposit_pct",
+        "VAT presented inclusive in customer totals",
+        "Availability endpoints for studios and talent rooms",
+        "Persisted booking store, resume-checkout flag and return path across sign-in",
+        "My Bookings linked from the authenticated account menu",
+      ],
+      unverified: [
+        "Whether Paymob is activated for live transactions — the checkout UI and payment_method capture are in the shipped client, but payment initiation is server-side and cannot be confirmed externally",
+        "Whether the Google Calendar integration reads free/busy state or only writes events — availability is resolved by a server endpoint whose source is not observable",
+        "Whether Supabase row-level security backs the API-layer authorisation",
+        "Whether the first-time-user welcome email still exists in the current implementation",
+      ],
+    },
   },
   {
     slug: "tpp-group",
@@ -242,7 +293,13 @@ export const projects = [
       "Product platform for an Arabic audience-intelligence tool that measures behaviour across audio, video and social. Fully bilingual English/Arabic, with an interactive analytics presentation layer and a demo-request pipeline feeding the sales team.",
     role: "Full-Stack Development",
     type: PROJECT_TYPES.CLIENT,
-    stack: ["Next.js", "React", "Vercel", "Google Tag Manager", "Google Analytics 4"],
+    stack: [
+      "Next.js",
+      "React",
+      "Vercel",
+      "Google Tag Manager",
+      "Google Analytics 4",
+    ],
     highlights: [
       "Bilingual English/Arabic with a dedicated /ar locale and RTL layout",
       "Interactive charting for engagement rate, content volume and sentiment scoring",
@@ -550,6 +607,10 @@ export const projects = [
 
 const byOrder = (a, b) => a.order - b.order;
 
-export const featuredProjects = projects.filter((p) => p.featured).sort(byOrder);
-export const earlierProjects = projects.filter((p) => !p.featured).sort(byOrder);
+export const featuredProjects = projects
+  .filter((p) => p.featured)
+  .sort(byOrder);
+export const earlierProjects = projects
+  .filter((p) => !p.featured)
+  .sort(byOrder);
 export const getProject = (slug) => projects.find((p) => p.slug === slug);
