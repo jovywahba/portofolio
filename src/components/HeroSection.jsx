@@ -20,10 +20,10 @@ export const HeroSection = () => {
           </p>
 
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I build and run complete software systems — full-stack applications,
-            booking and workflow platforms, internal tooling and the APIs,
-            databases, integrations and infrastructure behind them. Several are
-            live in production today.
+            I design and build complete software systems end to end — booking and
+            clinic platforms, an audience-intelligence product and SaaS tools,
+            each running in production with the APIs, databases, integrations and
+            infrastructure behind it.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-delay-4">

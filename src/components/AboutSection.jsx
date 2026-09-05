@@ -23,18 +23,21 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground">
-              My work covers whole systems rather than interfaces alone: booking
-              and scheduling platforms, clinic management software, and SaaS
-              products where I handle the application, the API and business
-              logic, the database schema, authentication and user roles, the
-              third-party integrations, and the deployment and domain setup that
-              puts it all online.
+              My work covers whole systems rather than interfaces alone. Across
+              seven production products I&apos;ve built multi-step booking and
+              scheduling engines, a multi-tenant healthcare platform, an
+              audience-intelligence product with Python data pipelines and an AI
+              analysis layer, and SaaS tools with subscription billing — owning
+              the application, the API and business logic, the relational data
+              model and access control, the integrations, and the deployment.
             </p>
 
             <p className="text-muted-foreground">
-              I work mainly with Next.js and React on the front, Node-based
-              server logic and REST APIs in the middle, and PostgreSQL through
-              Supabase for data — shipped on Vercel and Cloudflare.
+              I work mainly with TypeScript across Next.js and React, Python for
+              data ingestion, and PostgreSQL through Supabase with row-level
+              security — shipped on Vercel and Cloudflare. I care most about the
+              parts that keep a system correct: data isolation, verified
+              payments, safe redirects and access control.
             </p>
 
             {/* Buttons */}

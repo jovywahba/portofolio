@@ -1,133 +1,95 @@
 /**
- * Skills, grouped by engineering competency area rather than rated by
- * percentage. Every entry below is backed by a project in src/data/projects.js
- * or by documented training — nothing is listed for keyword coverage.
+ * Skills, grouped by competency area rather than rated by percentage.
  *
- * When a new project is added, add its verified technologies here too, so the
+ * Every entry is backed by at least one production project in
+ * src/data/projects.js (or documented training). Nothing is listed for keyword
+ * coverage. When a project's verified stack changes, update it here too so the
  * skills section and the project stacks never drift apart.
  */
 
 export const skillGroups = [
   {
-    id: "fullstack",
-    title: "Full-Stack Development",
-    description:
-      "End-to-end product work: interface, application logic, data layer and release.",
+    id: "languages",
+    title: "Languages",
+    description: "The languages I build and query systems in.",
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "Dart"],
+  },
+  {
+    id: "frontend",
+    title: "Frontend & Product",
+    description: "Interfaces that hold up on real devices, in two languages.",
     skills: [
-      "Next.js",
       "React",
-      "JavaScript",
-      "TypeScript",
-      "Node.js",
-      "Vite",
+      "Next.js",
+      "React Native",
       "Tailwind CSS",
+      "Responsive UI",
+      "RTL / i18n",
     ],
   },
   {
     id: "backend",
     title: "Backend & APIs",
-    description:
-      "Server-side logic, REST endpoints and the rules that sit behind a product.",
+    description: "The logic and endpoints behind a product.",
     skills: [
+      "Node.js",
       "REST APIs",
-      "Next.js Route Handlers",
-      "Express",
-      "Server-side business logic",
-      "Pricing & booking rules engines",
-      "Tax, discount & deposit calculation",
-      "Authentication & authorisation",
-      "Role-based access control",
+      "Server Actions / Route Handlers",
+      "Business-rule & pricing engines",
+      "Webhooks",
+      "OAuth 2.0",
     ],
   },
   {
     id: "data",
     title: "Databases & Data",
-    description:
-      "Relational modelling, querying and keeping business rules close to the data.",
+    description: "Relational modelling with the rules kept close to the data.",
     skills: [
       "PostgreSQL",
       "Supabase",
+      "Row-Level Security",
       "PostgREST",
-      "Firebase",
-      "MongoDB",
-      "Schema design",
-      "Database-enforced constraints",
-      "Data export & reporting",
-    ],
-  },
-  {
-    id: "infra",
-    title: "Infrastructure & Deployment",
-    description:
-      "Getting systems onto real domains and keeping them running in production.",
-    skills: [
-      "Vercel",
-      "Cloudflare",
-      "Domain & DNS configuration",
-      "Custom-domain routing",
-      "Environment configuration",
-      "Production deployment",
-      "Git & GitHub",
+      "Data modelling",
+      "Data pipelines",
     ],
   },
   {
     id: "integrations",
-    title: "Systems & Integrations",
-    description: "Wiring products into the third-party services they depend on.",
+    title: "Auth, Systems & Integrations",
+    description: "Access control and the third-party services products depend on.",
     skills: [
-      "Google Calendar API",
-      "Supabase Auth (OAuth, email verification)",
-      "Transactional email (Resend)",
-      "Payment gateway integration (Paymob)",
-      "WhatsApp Business links",
-      "Google Maps",
-      "Third-party REST APIs",
-      "Webhooks & callbacks",
+      "Supabase Auth",
+      "Role-based access control",
+      "Stripe",
+      "Paymob",
+      "Google Calendar",
+      "Resend",
     ],
   },
   {
-    id: "product",
-    title: "Product Engineering & Analytics",
-    description:
-      "Multi-tenant configuration, subscription tiers and measuring what ships.",
+    id: "data-ai",
+    title: "Data & AI",
+    description: "Turning collected data into analysis and decisions.",
     skills: [
-      "Multi-tenant / white-label configuration",
-      "Subscription & plan gating",
-      "Admin dashboards & internal tooling",
-      "Audit logging",
+      "Analytics systems",
+      "Anthropic API",
+      "OpenAI embeddings",
+      "Semantic search",
+      "Reporting pipelines",
       "PostHog",
-      "Google Analytics 4",
-      "Google Tag Manager",
     ],
   },
   {
-    id: "frontend",
-    title: "Frontend & Mobile",
-    description:
-      "Interfaces that hold up on real devices, in two languages and both directions.",
+    id: "infra",
+    title: "Infrastructure & Tooling",
+    description: "Getting systems onto real domains and keeping them healthy.",
     skills: [
-      "Responsive UI",
-      "Arabic / English bilingual UI",
-      "RTL layout",
-      "Accessibility basics",
-      "React Native",
-      "Expo",
-      "Flutter",
-      "HTML5 & CSS3",
-      "Bootstrap",
-    ],
-  },
-  {
-    id: "tools",
-    title: "Tools & Workflow",
-    description: "How the work actually gets built and shipped.",
-    skills: [
+      "Vercel",
+      "Cloudflare",
       "Git & GitHub",
-      "VS Code",
-      "AI-assisted development",
-      "Figma",
-      "Debugging & profiling",
-      "Technical documentation",
+      "GitHub Actions",
+      "Playwright",
+      "Vitest",
     ],
   },
 ];

@@ -88,6 +88,7 @@ export const projects = [
       "Paymob",
       "Vercel",
     ],
+    cardStack: ["Next.js", "React", "Supabase", "PostgreSQL", "Google Calendar API", "Paymob", "Vercel"],
     highlights: [
       "Multi-step booking workflow covering date and time, guests, studio selection, equipment and crew, additional and extra services, file-delivery requirements and confirmation — the booking is assembled dynamically from what the user selects",
       "Configurable pricing engine: rules depend on selections and duration, and cover preparation time, overtime handling and rounding, external-team deposit percentage and general operational settings",
@@ -181,6 +182,7 @@ export const projects = [
       "Paymob",
       "Vercel",
     ],
+    cardStack: ["Next.js", "React", "Supabase", "PostgreSQL", "Supabase Auth", "Paymob", "Vercel"],
     highlights: [
       "Self-service booking journey where a customer assembles a full production session rather than buying a single fixed product",
       "Rule-based pricing computed from the chosen configuration: studio base rate, duration tier, extras, post-production packages, talent rooms and file-delivery options, itemised into a transparent breakdown",
@@ -277,6 +279,7 @@ export const projects = [
       "Google Apps Script",
       "Cloudflare",
     ],
+    cardStack: ["React", "Vite", "Supabase", "PostgreSQL", "Edge Functions", "Cloudflare"],
     highlights: [
       "Multi-section routed application covering the group, its business units, brand portfolio, partners, leadership, editorial content and business enquiry",
       "Newsletter subscription handled by a PostgreSQL function rather than a direct table write from the browser, with the signup source recorded for attribution",
@@ -372,6 +375,7 @@ export const projects = [
       "Vitest",
       "Vercel",
     ],
+    cardStack: ["Next.js", "TypeScript", "Python", "PostgreSQL", "Anthropic API", "OpenAI Embeddings", "Vercel"],
     highlights: [
       "Fifteen OAuth 2.0 connectors covering major social, advertising and podcast-hosting platforms, each with its own start, callback and commit flow plus a guided onboarding path",
       "Scheduled Python ingestion pipelines per data source, normalising very different platform APIs into one warehouse model",
@@ -479,6 +483,7 @@ export const projects = [
       "Tailwind CSS",
       "Vercel",
     ],
+    cardStack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "RLS", "Paymob", "PostHog"],
     highlights: [
       "Multi-tenant from the schema up — every clinic's records are scoped by tenant and isolated by row-level security, not by query filtering in application code",
       "Route protection enforced in middleware before page HTML is streamed, with client-side auth, role and super-admin guards as a second layer",
@@ -576,6 +581,7 @@ export const projects = [
       "Tailwind CSS",
       "Vercel",
     ],
+    cardStack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "RLS", "Resend", "Vercel"],
     highlights: [
       "One invitation-rendering engine driving 28 distinct visual templates, composed from event configuration, the chosen template and the guest record rather than a page rebuilt per design",
       "Data-driven design system: colour themes and font pairings applied on top of any template, so a look changes without touching invitation logic",
@@ -674,6 +680,7 @@ export const projects = [
       "Zod",
       "Vercel",
     ],
+    cardStack: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "RLS", "Vercel"],
     highlights: [
       "16 QR types driven from one registry as the single source of truth, split into 'direct' (payload encoded into the QR) and 'hosted' (QR points at a published landing page) — components read type behaviour from the registry rather than re-declaring it",
       "Dynamic codes resolve through a stable short link: the QR encodes /r/<slug>, which looks the destination up in the database and 302-redirects, so the printed code never changes while its destination can",
@@ -794,52 +801,6 @@ export const projects = [
     outcomes: [],
     featured: false,
     order: 9,
-    unverified: [],
-  },
-  {
-    slug: "movie-app",
-    title: "Movie App",
-    url: "",
-    repo: "", // repo exists but is private -> the public link 404s; make it public to restore the GitHub button
-    image: "/projects/movie-app.webp",
-    images: [],
-    summary:
-      "Mobile movie browser showing titles, ratings and cast details, fetching live data from a public movie API.",
-    role: "Mobile Development",
-    type: PROJECT_TYPES.ACADEMIC,
-    stack: ["React Native", "Expo", "REST API"],
-    highlights: [],
-    problem: "",
-    solution: "",
-    architecture: "",
-    integrations: [],
-    challenges: [],
-    outcomes: [],
-    featured: false,
-    order: 10,
-    unverified: [],
-  },
-  {
-    slug: "e-learning",
-    title: "React E-Learning Web",
-    url: "",
-    repo: "", // repo exists but is private -> the public link 404s; make it public to restore the GitHub button
-    image: "/projects/e-learning.webp",
-    images: [],
-    summary:
-      "Component-based single-page app with authentication and course browsing, built with responsive layouts and form validation over Firebase.",
-    role: "Frontend Development",
-    type: PROJECT_TYPES.ACADEMIC,
-    stack: ["React", "Firebase"],
-    highlights: [],
-    problem: "",
-    solution: "",
-    architecture: "",
-    integrations: [],
-    challenges: [],
-    outcomes: [],
-    featured: false,
-    order: 11,
     unverified: [],
   },
   {

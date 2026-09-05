@@ -6,6 +6,8 @@ A single-page React application presenting selected production work — booking
 platforms, clinic management software and SaaS products — alongside the
 engineering competencies behind them.
 
+**Live:** https://portofolio-jovywahbas-projects.vercel.app _(update to the custom domain once configured)_
+
 ## Tech stack
 
 | Area       | Choice                                        |
