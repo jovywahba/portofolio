@@ -7,7 +7,7 @@
       /* A4 CV. Build with: npm run cv  (see cv/build-cv.mjs) */
       @page {
         size: A4;
-        margin: 12mm 13mm;
+        margin: 11mm 12mm;
       }
 
       :root {
@@ -30,8 +30,8 @@
       body {
         margin: 0;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 9.4pt;
-        line-height: 1.42;
+        font-size: 8.85pt;
+        line-height: 1.32;
         color: var(--body);
       }
 
@@ -77,11 +77,11 @@
 
       /* ---------- sections ---------- */
       section {
-        margin-bottom: 10px;
+        margin-bottom: 6px;
       }
 
       h2 {
-        margin: 0 0 6px;
+        margin: 0 0 5px;
         font-size: 9.2pt;
         font-weight: 700;
         letter-spacing: 1.7px;
@@ -97,8 +97,21 @@
 
       /* ---------- entries ---------- */
       .entry {
-        margin-bottom: 7px;
+        margin-bottom: 5px;
+        /* Allow a long entry to flow across a page break, but never strand its
+           heading at the bottom of a page or leave a single bullet behind. */
+        orphans: 2;
+        widows: 2;
+      }
+
+      .entry-head,
+      .entry-sub {
+        break-after: avoid;
         break-inside: avoid;
+      }
+
+      .stack {
+        break-before: avoid;
       }
 
       .entry:last-child {
@@ -115,7 +128,7 @@
       .entry-title {
         font-weight: 700;
         color: var(--ink);
-        font-size: 9.8pt;
+        font-size: 9.5pt;
       }
 
       .entry-meta {
@@ -137,7 +150,7 @@
       }
 
       li {
-        margin-bottom: 1.5px;
+        margin-bottom: 1px;
       }
 
       .stack {
@@ -319,24 +332,37 @@
 
       <div class="entry">
         <div class="entry-head">
-          <span class="entry-title">TPP Intelligence — Audience Analytics Platform</span>
+          <span class="entry-title"
+            >TPP Intelligence — Arabic Audience Intelligence Platform</span
+          >
           <span class="entry-meta">tppintelligence.io</span>
         </div>
-        <div class="entry-sub">Full-Stack Development</div>
+        <div class="entry-sub">Full-Stack Software Engineering</div>
         <ul>
           <li>
-            Built the product platform for an Arabic audience-intelligence tool,
-            fully bilingual across English and a dedicated Arabic locale with RTL
-            layout, including the interactive analytics presentation layer for
-            engagement, content volume and sentiment.
+            Built a multi-tenant analytics platform connecting social, ad and
+            podcast accounts through 15 OAuth integrations, normalised by
+            scheduled Python pipelines into one PostgreSQL warehouse with
+            row-level security enforcing tenant isolation in the database.
           </li>
           <li>
-            Implemented the demo-request conversion flow and instrumented the site
-            with Google Tag Manager and GA4.
+            Engineered the product layer: a modular dashboard of custom SVG
+            charts, a reporting engine rendering charts server-side into
+            scheduled PDF and spreadsheet deliverables, transcript semantic
+            search over vector embeddings, and a natural-language analysis layer
+            grounded in the platform's own data via the Anthropic API.
+          </li>
+          <li>
+            Delivered bilingually (English/Arabic, full RTL) with role-aware
+            access, audit logging, admin sync-health tooling, and 27 scheduled
+            workflows covering watchdogs, backfills, backups and migration
+            rollback.
           </li>
         </ul>
         <div class="stack">
-          <b>Stack:</b> Next.js · React · Google Tag Manager · GA4 · Vercel
+          <b>Stack:</b> Next.js · React · TypeScript · Python · Supabase ·
+          PostgreSQL · RLS · OAuth 2.0 · Anthropic API · OpenAI Embeddings ·
+          GitHub Actions · Vercel
         </div>
       </div>
 
@@ -448,40 +474,34 @@
       <h2>Technical Skills</h2>
       <div class="skills">
         <div>
-          <b>Languages &amp; Frameworks:</b> JavaScript, TypeScript, Next.js,
-          React, Node.js, Express, React Native, Flutter, Dart, HTML5, CSS3,
-          Tailwind CSS, Vite, Bootstrap
+          <b>Languages &amp; Frameworks:</b> TypeScript, JavaScript, Python,
+          Next.js, React, Node.js, Express, React Native, Flutter, Dart, HTML5,
+          CSS3, Tailwind CSS, Vite
         </div>
         <div>
-          <b>Backend &amp; APIs:</b> REST API design, Next.js route handlers,
-          server-side business logic, pricing and booking rules engines,
-          authentication and authorisation, role-based access control
+          <b>Backend &amp; APIs:</b> REST API design, server-side business logic,
+          pricing and booking rules engines, OAuth 2.0 integrations, scheduled
+          data pipelines, authentication and role-based access control
         </div>
         <div>
           <b>Databases &amp; Data:</b> PostgreSQL, Supabase, PostgREST, Firebase,
-          MongoDB, relational schema design, database-enforced constraints, data
-          export and reporting
+          MongoDB, relational schema design, row-level security, data
+          normalisation and warehousing, reporting and export
         </div>
         <div>
-          <b>Infrastructure &amp; Deployment:</b> Vercel, Cloudflare, domain and
-          DNS configuration, custom-domain routing, environment configuration,
-          Git and GitHub
+          <b>Infrastructure &amp; DevOps:</b> Vercel, Cloudflare, GitHub Actions,
+          CI/CD, scheduled jobs and watchdogs, database backup and migration
+          rollback, domain and DNS configuration, Git
         </div>
         <div>
-          <b>Integrations:</b> Google Calendar API, transactional email (Resend),
-          payment gateway integration (Paymob), WhatsApp Business links, Google
-          Maps, third-party REST APIs
-        </div>
-        <div>
-          <b>Product &amp; Analytics:</b> multi-tenant / white-label
-          configuration, subscription and plan gating, admin dashboards and
-          internal tooling, audit logging, PostHog, Google Analytics 4, Google Tag
-          Manager
+          <b>AI &amp; Integrations:</b> Anthropic API, OpenAI embeddings and
+          semantic search, Google Calendar API, payment gateway integration
+          (Paymob), transactional email, analytics instrumentation
         </div>
         <div>
           <b>Practices:</b> Arabic/English bilingual and RTL interfaces,
-          responsive UI, AI-assisted development, debugging and profiling,
-          technical documentation
+          responsive UI, automated testing (Vitest, Playwright), accessibility
+          checks, audit logging, technical documentation
         </div>
       </div>
     </section>
